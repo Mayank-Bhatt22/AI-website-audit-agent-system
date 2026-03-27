@@ -1,0 +1,242 @@
+Got it bro 👍 — if you want to **run this smoothly in class**, you should prepare it so it **works even if the internet/API fails**. I’ll give you the **exact steps to run it in class** and also a **safe backup method**.
+
+---
+
+# 🧭 What You Want in Class
+
+You want this flow to work:
+
+```
+React UI
+↓
+FastAPI Backend
+↓
+4 AI Agents
+↓
+Final Website Report
+```
+
+So your teacher sees the **full AI agent system working**.
+
+---
+
+# ✅ Method 1 (Best for Class) — Run With API Key
+
+If you have **OpenAI credits**, do this.
+
+## 1️⃣ Open Project Folder
+
+Open terminal inside your project folder.
+
+```
+ok report/
+```
+
+---
+
+## 2️⃣ Activate Virtual Environment
+
+Run:
+
+```bash
+.venv\Scripts\activate
+```
+
+You should see:
+
+```
+(.venv)
+```
+
+---
+
+## 3️⃣ Start Backend Server
+
+Run:
+
+```bash
+python -m uvicorn main:app --reload
+```
+
+Expected output:
+
+```
+Uvicorn running on http://127.0.0.1:8000
+```
+
+---
+
+## 4️⃣ Test Backend
+
+Open browser:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+You will see **FastAPI Swagger**.
+
+Test endpoint:
+
+```
+GET /audit
+```
+
+Enter:
+
+```
+https://example.com
+```
+
+Click **Execute**.
+
+---
+
+## 5️⃣ Start Frontend
+
+Open another terminal.
+
+Go to frontend folder:
+
+```bash
+cd frontend
+```
+
+Run:
+
+```bash
+npm install
+npm start
+```
+
+Browser opens:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 6️⃣ Test Full System
+
+Enter:
+
+```
+https://example.com
+```
+
+Click:
+
+```
+Analyze Website
+```
+
+You should see:
+
+```
+Website Analysis
+Technical Audit
+Business Analysis
+Strategy Plan
+```
+
+---
+
+# ⚠️ Important Backup (VERY IMPORTANT)
+
+Sometimes API fails in class.
+
+So create **offline demo mode**.
+
+---
+
+# 🛟 Method 2 (Offline Demo — Works Without API)
+
+Modify your agents temporarily.
+
+Example:
+
+### `website_analyzer_agent.py`
+
+Replace OpenAI call with:
+
+```python
+def run_website_analyzer(url, website_data):
+
+    return {
+        "website_title": "Example Website",
+        "meta_description": "Demo description",
+        "headings": ["Welcome", "About Us"],
+        "content_summary": "This is a demo website.",
+        "navigation_structure": ["Home", "Products", "Contact"],
+        "cta_elements": ["Buy Now"],
+        "forms_detected": ["Contact Form"],
+        "media_elements": ["Images"],
+        "internal_links": ["/about"],
+        "external_links": ["https://google.com"]
+    }
+```
+
+Now the system **runs without OpenAI**.
+
+Teacher will still see:
+
+```
+Frontend
+Backend
+Agents
+Final Strategy
+```
+
+---
+
+# 🧠 What You Should Tell in Class
+
+Explain architecture like this:
+
+```
+User enters website URL
+↓
+FastAPI backend receives request
+↓
+Website Analyzer Agent extracts data
+↓
+Technical Audit Agent checks SEO & performance
+↓
+Business Analysis Agent evaluates marketing
+↓
+Strategy Agent creates final plan
+↓
+Frontend displays results
+```
+
+This shows **multi-agent AI system**.
+
+---
+
+# 🎯 Demo Script (What You Say)
+
+When running demo:
+
+> "This system uses multiple AI agents.
+> The first agent analyzes the website structure.
+> The second agent performs a technical SEO audit.
+> The third agent analyzes the business and marketing strategy.
+> The final agent combines everything and produces a strategic improvement plan."
+
+---
+
+# ⭐ Extra Tip (Very Important)
+
+Before class, run:
+
+```bash
+python -m uvicorn main:app --reload
+npm start
+```
+
+**once** to confirm everything works.
+
+---
+
+# 🚀 If you want, I can also give you a **super clean demo script + architecture diagram** that will make your professor think this is a **professional AI system**.
